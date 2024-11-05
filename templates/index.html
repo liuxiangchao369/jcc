@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自定义表格输入页面</title>
+</head>
+
+<body>
+    <form action="/submit" method="POST">
+        <table id="customTable">
+            <thead>
+                <tr>
+                    <th>玩家编号</th>
+                    <th>用户名</th>
+                    <th>对手编号</th>
+                    <th>是否为主场</th>
+                    <th>是否对战镜像</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A</td>
+                    <td><input type="text" id="usernameA" name="usernameA"></td>
+                    <td>
+                        <select id="selectA" name="selectA">
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="E">E</option>
+                            <option value="F">F</option>
+                            <option value="G">G</option>
+                            <option value="H">H</option>
+                        </select>
+                    </td>
+                    <td><input type="checkbox" id="homeA" name="homeA"></td>
+                    <td><input type="checkbox" id="mirrorA" name="mirrorA"></td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td><input type="text" id="usernameB" name="usernameB"></td>
+                    <td>
+                        <select id="selectB" name="selectB">
+                            <option value="A">A</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="E">E</option>
+                            <option value="F">F</option>
+                            <option value="G">G</option>
+                            <option value="H">H</option>
+                        </select>
+                    </td>
+                    <td><input type="checkbox" id="homeB" name="homeB"></td>
+                    <td><input type="checkbox" id="mirrorB" name="mirrorB"></td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td><input type="text" id="usernameC" name="usernameC"></td>
+                    <td>
+                        <select id="selectC" name="selectC">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="D">D</option>
+                            <option value="E">E</option>
+                            <option value="F">F</option>
+                            <option value="G">G</option>
+                            <option value="H">H</option>
+                        </select>
+                    </td>
+                    <td><input type="checkbox" id="homeC" name="homeC"></td>
+                    <td><input type="checkbox" id="mirrorC" name="mirrorC"></td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td><input type="text" id="usernameD" name="usernameD"></td>
+                    <td>
+                        <select id="selectD" name="selectD">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="E">E</option>
+                            <option value="F">F</option>
+                            <option value="G">G</option>
+                            <option value="H">H</option>
+                        </select>
+                    </td>
+                    <td><input type="checkbox" id="homeD" name="homeD"></td>
+                    <td><input type="checkbox" id="mirrorD" name="mirrorD"></td>
+                </tr>
+                <tr>
+                    <td>E</td>
+                    <td><input type="text" id="usernameE" name="usernameE"></td>
+                    <td>
+                        <select id="selectE" name="selectE">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="F">F</option>
+                            <option value="G">G</option>
+                            <option value="H">H</option>
+                        </select>
+                    </td>
+                    <td><input type="checkbox" id="homeE" name="homeE"></td>
+                    <td><input type="checkbox" id="mirrorE" name="mirrorE"></td>
+                </tr>
+                <tr>
+                    <td>F</td>
+                    <td><input type="text" id="usernameF" name="usernameF"></td>
+                    <td>
+                        <select id="selectF" name="selectF">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="E">E</option>
+                            <option value="G">G</option>
+                            <option value="H">H</option>
+                        </select>
+                    </td>
+                    <td><input type="checkbox" id="homeF" name="homeF"></td>
+                    <td><input type="checkbox" id="mirrorF" name="mirrorF"></td>
+                </tr>
+                <tr>
+                    <td>G</td>
+                    <td><input type="text" id="usernameG" name="usernameG"></td>
+                    <td>
+                        <select id="selectG" name="selectG">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="E">E</option>
+                            <option value="F">F</option>
+                            <option value="H">H</option>
+                        </select>
+                    </td>
+                    <td><input type="checkbox" id="homeG" name="homeG"></td>
+                    <td><input type="checkbox" id="mirrorG" name="mirrorG"></td>
+                </tr>
+                <tr>
+                    <td>H</td>
+                    <td><input type="text" id="usernameH" name="usernameH"></td>
+                    <td>
+                        <select id="selectH" name="selectH">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="E">E</option>
+                            <option value="F">F</option>
+                            <option value="G">G</option>
+                        </select>
+                    </td>
+                    <td><input type="checkbox" id="homeH" name="homeH"></td>
+                    <td><input type="checkbox" id="mirrorH" name="mirrorH"></td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="submit" value="提交一次对战记录">
+    </form>
+
+    <hr>
+
+    <table id="formTable" border="1">
+
+      <thead>
+          <tr>
+              <th style="width:100px">玩家编号</th>
+              <th style="width:150px">用户名</th>
+              <th style="width:200px">TOP1</th>
+              <th style="width:200px">TOP2</th>
+              <th style="width:200px">TOP3</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for item in form_data %}
+          <tr>
+              <td>{{ item.player_code }}</td>
+              <td>{{ item.player_name }}</td>
+              <td>{{ item.top1 }}</td>
+              <td>{{ item.top2 }}</td>
+              <td>{{ item.top3 }}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+</body>
+</html>
