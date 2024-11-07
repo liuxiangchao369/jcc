@@ -39,7 +39,10 @@ conn.close()
 
 @app.route("/")
 def home():
-    return render_template("index.html",form_data={})
+     if 'user_id' in session:
+        return render_template("index.html",form_data={})
+     else:
+         return render_template("login.html")
 
 @app.route('/register', methods=['GET','POST'])
 def register():
