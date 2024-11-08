@@ -174,14 +174,14 @@ def submit_form():
     for i in range(8):  # 主对角线值为零
         mat[i][i] = 0
     # 刚交战的值为1
-    mat[0][player_map[opponentA]] = 1
-    mat[1][player_map[opponentB]] = 1
-    mat[2][player_map[opponentC]] = 1
-    mat[3][player_map[opponentD]] = 1
-    mat[4][player_map[opponentE]] = 1
-    mat[5][player_map[opponentF]] = 1
-    mat[6][player_map[opponentG]] = 1
-    mat[7][player_map[opponentH]] = 1
+    mat[0][player_map[opponentA]] = 0
+    mat[1][player_map[opponentB]] = 0
+    mat[2][player_map[opponentC]] = 0
+    mat[3][player_map[opponentD]] = 0
+    mat[4][player_map[opponentE]] = 0
+    mat[5][player_map[opponentF]] = 0
+    mat[6][player_map[opponentG]] = 0
+    mat[7][player_map[opponentH]] = 0
     # 已出局的置为0
     players = 8
     if isOutA:
@@ -328,6 +328,7 @@ def calculate_probability(mat, home_list, player_name_map,rounds,players=8) -> l
                 mat_score[i][j] = 0
             else:
                 mat_score[i][j] = mat_score[i][j] + 2 * home_score[i][j] / (home_score[i][j] + 1 )
+    print(mat_score)
     # 构造返回结果probability
     row_sums = mat_score.sum(axis=1)
     ratios = mat_score / row_sums[:, np.newaxis]
