@@ -39,10 +39,7 @@ conn.close()
 
 @app.route("/")
 def home():
-     if 'user_id' in session:
-        return render_template("index.html",form_data={})
-     else:
-         return render_template("login.html")
+    return render_template("index.html",form_data={})
 
 @app.route('/register', methods=['GET','POST'])
 def register():
@@ -105,6 +102,7 @@ def init():
         conn.close()
         form_data={}
         form_data["mat"] = zero_matrix.tolist()
+        form_data["player_name"] = []
         return render_template("index.html", form_data=form_data)
     else:
         #提示请先登录
@@ -228,6 +226,7 @@ def submit_form():
    
     ]
     form_data["predict_result"] = predict_result
+    form_data["player_name"] = [nameA,nameB,nameC,nameD,nameE,nameF,nameG,nameH]
     return render_template("index.html", form_data=form_data)
 
 

@@ -38,7 +38,8 @@
       <tbody>
         <tr>
           <td>A</td>
-          <td><input type="text" id="usernameA" name="usernameA"></td>
+          <!--在加载页面时，将后端传回的form_data["player_name"] = [nameA,nameB,nameC,nameD,nameE,nameF,nameG,nameH]显示在输入框-->
+          <td><input type="text" id="usernameA" name="usernameA" value="{{ form_data['player_name'][0] }}"></td>
           <td>
             <select id="selectA" name="selectA">
               <option value="B">B</option>
@@ -55,7 +56,7 @@
         </tr>
         <tr>
           <td>B</td>
-          <td><input type="text" id="usernameB" name="usernameB"></td>
+          <td><input type="text" id="usernameB" name="usernameB" value="{{ form_data['player_name'][1] }}"></td>
           <td>
             <select id="selectB" name="selectB">
               <option value="A">A</option>
@@ -72,7 +73,7 @@
         </tr>
         <tr>
           <td>C</td>
-          <td><input type="text" id="usernameC" name="usernameC"></td>
+          <td><input type="text" id="usernameC" name="usernameC" value="{{ form_data['player_name'][2] }}"></td>
           <td>
             <select id="selectC" name="selectC">
               <option value="A">A</option>
@@ -89,7 +90,7 @@
         </tr>
         <tr>
           <td>D</td>
-          <td><input type="text" id="usernameD" name="usernameD"></td>
+          <td><input type="text" id="usernameD" name="usernameD" value="{{ form_data['player_name'][3] }}"></td>
           <td>
             <select id="selectD" name="selectD">
               <option value="A">A</option>
@@ -106,7 +107,7 @@
         </tr>
         <tr>
           <td>E</td>
-          <td><input type="text" id="usernameE" name="usernameE"></td>
+          <td><input type="text" id="usernameE" name="usernameE" value="{{ form_data['player_name'][4] }}"></td>
           <td>
             <select id="selectE" name="selectE">
               <option value="A">A</option>
@@ -123,7 +124,7 @@
         </tr>
         <tr>
           <td>F</td>
-          <td><input type="text" id="usernameF" name="usernameF"></td>
+          <td><input type="text" id="usernameF" name="usernameF" value="{{ form_data['player_name'][5] }}"></td>
           <td>
             <select id="selectF" name="selectF">
               <option value="A">A</option>
@@ -140,7 +141,7 @@
         </tr>
         <tr>
           <td>G</td>
-          <td><input type="text" id="usernameG" name="usernameG"></td>
+          <td><input type="text" id="usernameG" name="usernameG" value="{{ form_data['player_name'][6] }}"></td>
           <td>
             <select id="selectG" name="selectG">
               <option value="A">A</option>
@@ -157,7 +158,7 @@
         </tr>
         <tr>
           <td>H</td>
-          <td><input type="text" id="usernameH" name="usernameH"></td>
+          <td><input type="text" id="usernameH" name="usernameH" value="{{ form_data['player_name'][7] }}"></td>
           <td>
             <select id="selectH" name="selectH">
               <option value="A">A</option>
@@ -175,7 +176,7 @@
       </tbody>
     </table>
     <input type="submit" value="提交一次对战记录">
-
+    <input type="hidden" id="defaultUsernames" name="defaultUsernames">
   </form>
 
   <hr>
@@ -220,6 +221,8 @@
     <!-- <input type="text" id="user_id" name="user_id" placeholder="请输入用户ID"> -->
     <input type="submit" value="清除记录开始新的对局">
   </form>
+
+
 </body>
 
 </html>
