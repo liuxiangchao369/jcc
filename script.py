@@ -278,7 +278,7 @@ def submit_form():
     }
     # 预测遇到每个对手的概率
     predict_result = calculate_probability(
-        mat=mat, home_list=home_list, player_name_map=player_name_map,players=players,rounds=0
+        mat=mat, home_list=home_list, player_name_map=player_name_map,players=players,rounds=rounds
     ) 
     form_data["predict_result"] = predict_result
     form_data["player_name"] = [nameA, nameB, nameC, nameD, nameE, nameF, nameG, nameH]    
@@ -330,8 +330,9 @@ def calculate_probability(mat, home_list, player_name_map,rounds,players=8) -> l
             if mat_score[i][j] <= zero_threshold and rounds>3:
                 mat_score[i][j] = 0
             else:
+                print(mat_score[i][j],zero_threshold,rounds)
                 mat_score[i][j] = mat_score[i][j] + 2 * home_score[i][j] / (home_score[i][j] + 1 )
-    # print(mat_score)
+    print(mat_score)
     # 构造返回结果probability
     row_sums = mat_score.sum(axis=1)
     ratios = mat_score / row_sums[:, np.newaxis]
