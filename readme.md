@@ -1,2 +1,14 @@
-todo:是否出局需要记住状态，避免重复输入 done
-对手选择A->B后自动配对，无需重复输入B->A
+# env
+
+```
+conda create -n env_name python=3.12
+conda activate env_name
+conda install -r requirements.txt
+```
+
+
+# start
+
+```
+python3 script.py 
+```
