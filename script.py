@@ -46,6 +46,7 @@ def home():
         user_id = session["user_id"]
         form_data["player_name"] = []
         form_data["user_id"] = user_id
+        form_data["isOut"]=[False,False,False,False,False,False,False,False]
         return render_template("index.html", form_data=form_data)
     else:
         return render_template("login.html")

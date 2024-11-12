@@ -22,6 +22,35 @@
     }
   </style>
 </head>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // 获取所有对手选择元素
+    var selectElements = document.querySelectorAll('select');
+
+    // 遍历所有对手选择元素，使用立即执行函数表达式（IIFE）来创建独立的闭包环境
+    for (var i = 0; i < selectElements.length; i++) {
+        (function (index) {
+            // 为每个对手选择元素添加change事件监听器
+            selectElements[index].addEventListener('change', function () {
+                // 获取当前对手选择元素的值
+                var selectedValue = this.value;
+                // 打印selectedValue
+                console.log(selectedValue);
+
+                // 将对手的对手赋值为当前选手
+                var calculatedIndex = selectedValue.charAt(0).charCodeAt(0) - 65;
+                console.log("计算出的索引值: " + calculatedIndex + ", 选择的值: " + selectedValue);
+                selectElements[calculatedIndex].value = this.id.substring(6);
+
+                // 如果当前选手选择的是自己，则将对手的对手设置为空
+                if (selectedValue === this.id.substring(6)) {
+                    this.value = "";
+                }
+            });
+        })(i);
+    }
+});
+</script>
 
 <body>
   <form action="/submit" method="POST">
@@ -54,7 +83,7 @@
           <td><input type="checkbox" id="homeA" name="homeA"></td>
           <!-- #当form_data['isOut'][0] 为True时，选中checkbox -->
 
-          <td><input type="checkbox" id="isOutA" name="isOutA"  value="{{form_data['isOut'][0]}}"></td>
+          <td><input type="checkbox" id="isOutA" name="isOutA" value="{{form_data['isOut'][0]}}"></td>
         </tr>
         <tr>
           <td>B</td>
@@ -177,7 +206,7 @@
         </tr>
       </tbody>
     </table>
-    <input type="submit" value="提交一次对战记录"> 
+    <input type="submit" value="提交一次对战记录">
     <span>当前轮次:{{ form_data['rounds'] }}</span>
     <input type="hidden" id="defaultUsernames" name="defaultUsernames">
   </form>
@@ -227,35 +256,35 @@
 
   <script>
     var checkboxA = document.getElementById("isOutA");
-    if ("{{form_data['isOut'][0] }}"=="True") {
+    if ("{{form_data['isOut'][0] }}" == "True") {
       checkboxA.checked = true;
-    } 
+    }
     var checkboxB = document.getElementById("isOutB");
-    if ("{{form_data['isOut'][1] }}"=="True") {
+    if ("{{form_data['isOut'][1] }}" == "True") {
       checkboxB.checked = true;
     }
     var checkboxC = document.getElementById("isOutC");
-    if ("{{form_data['isOut'][2] }}"=="True") {
+    if ("{{form_data['isOut'][2] }}" == "True") {
       checkboxC.checked = true;
     }
     var checkboxD = document.getElementById("isOutD");
-    if ("{{form_data['isOut'][3] }}"=="True") {
+    if ("{{form_data['isOut'][3] }}" == "True") {
       checkboxD.checked = true;
     }
     var checkboxE = document.getElementById("isOutE");
-    if ("{{form_data['isOut'][4] }}"=="True") {
+    if ("{{form_data['isOut'][4] }}" == "True") {
       checkboxE.checked = true;
     }
     var checkboxF = document.getElementById("isOutF");
-    if ("{{form_data['isOut'][5] }}"=="True") {
+    if ("{{form_data['isOut'][5] }}" == "True") {
       checkboxF.checked = true;
     }
     var checkboxG = document.getElementById("isOutG");
-    if ("{{form_data['isOut'][6] }}"=="True") {
+    if ("{{form_data['isOut'][6] }}" == "True") {
       checkboxG.checked = true;
     }
     var checkboxH = document.getElementById("isOutH");
-    if ("{{form_data['isOut'][7] }}"=="True") {
+    if ("{{form_data['isOut'][7] }}" == "True") {
       checkboxH.checked = true;
     }
   </script>
