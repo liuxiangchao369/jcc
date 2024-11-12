@@ -52,7 +52,9 @@
             </select>
           </td>
           <td><input type="checkbox" id="homeA" name="homeA"></td>
-          <td><input type="checkbox" id="isOutA" name="isOutA"></td>
+          <!-- #当form_data['isOut'][0] 为True时，选中checkbox -->
+
+          <td><input type="checkbox" id="isOutA" name="isOutA"  value="{{form_data['isOut'][0]}}"></td>
         </tr>
         <tr>
           <td>B</td>
@@ -69,7 +71,7 @@
             </select>
           </td>
           <td><input type="checkbox" id="homeB" name="homeB"></td>
-          <td><input type="checkbox" id="isOutB" name="isOutB"></td>
+          <td><input type="checkbox" id="isOutB" name="isOutB" value="{{ form_data['isOut'][1] }}"></td>
         </tr>
         <tr>
           <td>C</td>
@@ -86,7 +88,7 @@
             </select>
           </td>
           <td><input type="checkbox" id="homeC" name="homeC"></td>
-          <td><input type="checkbox" id="isOutC" name="isOutC"></td>
+          <td><input type="checkbox" id="isOutC" name="isOutC" value="{{ form_data['isOut'][2] }}"></td>
         </tr>
         <tr>
           <td>D</td>
@@ -103,7 +105,7 @@
             </select>
           </td>
           <td><input type="checkbox" id="homeD" name="homeD"></td>
-          <td><input type="checkbox" id="isOutD" name="isOutD"></td>
+          <td><input type="checkbox" id="isOutD" name="isOutD" value="{{ form_data['isOut'][3] }}"></td>
         </tr>
         <tr>
           <td>E</td>
@@ -120,7 +122,7 @@
             </select>
           </td>
           <td><input type="checkbox" id="homeE" name="homeE"></td>
-          <td><input type="checkbox" id="isOutE" name="isOutE"></td>
+          <td><input type="checkbox" id="isOutE" name="isOutE" value="{{ form_data['isOut'][4] }}"></td>
         </tr>
         <tr>
           <td>F</td>
@@ -137,7 +139,7 @@
             </select>
           </td>
           <td><input type="checkbox" id="homeF" name="homeF"></td>
-          <td><input type="checkbox" id="isOutF" name="isOutF"></td>
+          <td><input type="checkbox" id="isOutF" name="isOutF" value="{{ form_data['isOut'][5] }}"></td>
         </tr>
         <tr>
           <td>G</td>
@@ -154,7 +156,7 @@
             </select>
           </td>
           <td><input type="checkbox" id="homeG" name="homeG"></td>
-          <td><input type="checkbox" id="isOutG" name="isOutG"></td>
+          <td><input type="checkbox" id="isOutG" name="isOutG" value="{{ form_data['isOut'][6] }}"></td>
         </tr>
         <tr>
           <td>H</td>
@@ -171,7 +173,7 @@
             </select>
           </td>
           <td><input type="checkbox" id="homeH" name="homeH"></td>
-          <td><input type="checkbox" id="isOutH" name="isOutH"></td>
+          <td><input type="checkbox" id="isOutH" name="isOutH" value="{{ form_data['isOut'][7] }}"></td>
         </tr>
       </tbody>
     </table>
@@ -223,6 +225,40 @@
     <input type="submit" value="清除记录开始新的对局">
   </form>
 
+  <script>
+    var checkboxA = document.getElementById("isOutA");
+    if ("{{form_data['isOut'][0] }}"=="True") {
+      checkboxA.checked = true;
+    } 
+    var checkboxB = document.getElementById("isOutB");
+    if ("{{form_data['isOut'][1] }}"=="True") {
+      checkboxB.checked = true;
+    }
+    var checkboxC = document.getElementById("isOutC");
+    if ("{{form_data['isOut'][2] }}"=="True") {
+      checkboxC.checked = true;
+    }
+    var checkboxD = document.getElementById("isOutD");
+    if ("{{form_data['isOut'][3] }}"=="True") {
+      checkboxD.checked = true;
+    }
+    var checkboxE = document.getElementById("isOutE");
+    if ("{{form_data['isOut'][4] }}"=="True") {
+      checkboxE.checked = true;
+    }
+    var checkboxF = document.getElementById("isOutF");
+    if ("{{form_data['isOut'][5] }}"=="True") {
+      checkboxF.checked = true;
+    }
+    var checkboxG = document.getElementById("isOutG");
+    if ("{{form_data['isOut'][6] }}"=="True") {
+      checkboxG.checked = true;
+    }
+    var checkboxH = document.getElementById("isOutH");
+    if ("{{form_data['isOut'][7] }}"=="True") {
+      checkboxH.checked = true;
+    }
+  </script>
 
 </body>
 

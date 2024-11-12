@@ -96,9 +96,9 @@ def login():
         print("session:", session)
         session["user_id"] = user_id
         print("-----------------")
-        init()
-        print("****************")
-        return render_template("index.html", form_data={"player_name": []})
+        return init()
+        # print("****************")
+        # return render_template("index.html", form_data={"player_name": []})
     return render_template("login.html", message="用户名或密码错误")
 
 
@@ -123,6 +123,7 @@ def init():
         form_data = {}
         form_data["mat"] = zero_matrix.tolist()
         form_data["player_name"] = []
+        form_data["isOut"]=[False,False,False,False,False,False,False,False]
         return render_template("index.html", form_data=form_data)
     else:
         # 提示请先登录
@@ -282,6 +283,7 @@ def submit_form():
     form_data["player_name"] = [nameA, nameB, nameC, nameD, nameE, nameF, nameG, nameH]    
     session["rounds"]=rounds+1
     form_data["rounds"] = rounds
+    form_data["isOut"]=[isOutA, isOutB, isOutC, isOutD, isOutE, isOutF, isOutG, isOutH]
     return render_template("index.html", form_data=form_data)
 
 
@@ -328,7 +330,7 @@ def calculate_probability(mat, home_list, player_name_map,rounds,players=8) -> l
                 mat_score[i][j] = 0
             else:
                 mat_score[i][j] = mat_score[i][j] + 2 * home_score[i][j] / (home_score[i][j] + 1 )
-    print(mat_score)
+    # print(mat_score)
     # 构造返回结果probability
     row_sums = mat_score.sum(axis=1)
     ratios = mat_score / row_sums[:, np.newaxis]
